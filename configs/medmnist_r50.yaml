@@ -1,0 +1,18 @@
+NAME: 'MEDMNIST.ZEROSHOT.Resnet50'
+OUTPUT_DIR: './results/RN50'
+
+DATASET:
+  DATASET: "organsmnist"
+
+
+
+TRANSFORMS:
+  TEST_TRANSFORMS: ("shorter_resize_for_crop", "center_crop")
+
+TEST:
+  BATCH_SIZE: 8
+  NUM_WORKERS: 4
+
+PRETRAINED:
+  CLIP_VISION_ENCODER: "RN50"
+  CLIP_PATH: "./pretrained/PubMedCLIP_RN50.pth"
